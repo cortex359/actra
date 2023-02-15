@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:c_sharp._0x09"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Zeiterfassung" Height="450" Width="800">
+    <Grid Background="#FF252525">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="412*"/>
+        </Grid.RowDefinitions>
+        <Calendar HorizontalAlignment="Left" Margin="603,2.599,0,0" VerticalAlignment="Top" Grid.Row="1" SelectionMode="SingleRange"/>
+        <RichTextBox HorizontalAlignment="Left" Height="254" Margin="10,36,0,0" VerticalAlignment="Top" Width="232" Grid.Row="1">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="14:16 Visual Studio c-sharp,"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="14:16 Visual Studio c-sharp,"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="280,36,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" SelectionMode="Multiple">
+            <ListBoxItem Content="ListBoxItem"/>
+            <ListBoxItem Content="ListBoxItem"/>
+            <ListBoxItem Content="ListBoxItem"/>
+        </ListBox>
+        <Button Content="Starte Arbeitstag" HorizontalAlignment="Left" Margin="638,219,0,0" Grid.Row="1" VerticalAlignment="Top" Width="112"/>
     </Grid>
 </Window>
