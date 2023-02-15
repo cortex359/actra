@@ -1,6 +1,6 @@
-# :student: Actra: Zeiterfassungstool
+# Actra: :timer: Zeiterfassungstool
 
-Studentisches Projekt von Isabelle Winkler <isabelle.winkler@rwth-aachen.de> und Christian Rene Thelen <christian.thelen@rwth-aachen.de>.
+Studentisches Projekt von :woman_student: Isabelle Winkler <isabelle.winkler@rwth-aachen.de> und :man_student: Christian Rene Thelen <christian.thelen@rwth-aachen.de>.
 
 ## Beschreibung
 Windows Anwendung zur quasi automatischen Zeiterfassung.
