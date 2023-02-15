@@ -1,6 +1,6 @@
 # :student: Actra: Zeiterfassungstool
 
-Studentisches Projekt.
+Studentisches Projekt von Isabelle Winkler <isabelle.winkler@rwth-aachen.de> und Christian Rene Thelen <christian.thelen@rwth-aachen.de>.
 
 ## Beschreibung
 Windows Anwendung zur quasi automatischen Zeiterfassung.
@@ -13,7 +13,6 @@ Windows Anwendung zur quasi automatischen Zeiterfassung.
 | Semester | WiSe22-23    |
 | Modul    | C#           |
 | Dozent   | Prof. A. Voß |
-| Autoren  | 
 
 **Studiengang**
 
