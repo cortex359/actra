@@ -8,7 +8,7 @@ Windows Anwendung zur quasi automatischen Zeiterfassung.
 ## Projektinfos
 
 | Projekt  | c-sharp.0x09 |
-|--|--| 
+|----------|--------------| 
 | Semester | WiSe22-23    |
 | Modul    | C#           |
 | Dozent   | Prof. A. Voß |
