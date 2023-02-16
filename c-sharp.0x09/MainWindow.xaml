@@ -5,57 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:c_sharp._0x09"
         mc:Ignorable="d"
-        Title="Zeiterfassung" Height="617" Width="877" HorizontalAlignment="Left" VerticalAlignment="Top">
+        Title="Zeiterfassung" Height="638" Width="890" HorizontalAlignment="Left" VerticalAlignment="Top">
     <Grid Background="#FF252525">
         <Grid.RowDefinitions>
             <RowDefinition Height="0*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Rectangle HorizontalAlignment="Left" Height="172" Margin="664,417,0,0" Grid.Row="1" Stroke="#FF656565" VerticalAlignment="Top" Width="201"/>
-        <Rectangle HorizontalAlignment="Left" Height="53" Margin="664,257,0,0" Grid.Row="1" Stroke="#FF656565" VerticalAlignment="Top" Width="201"/>
-        <Rectangle HorizontalAlignment="Left" Height="195" Margin="664,63,0,0" Grid.Row="1" Stroke="#FF656565" VerticalAlignment="Top" Width="201"/>
-        <Rectangle HorizontalAlignment="Left" Height="55" Margin="664,9,0,0" Grid.Row="1" Stroke="#FF656565" VerticalAlignment="Top" Width="201"/>
-        <Rectangle HorizontalAlignment="Left" Height="580" Margin="14,9,0,0" Grid.Row="1" Stroke="#FF656565" VerticalAlignment="Top" Width="651"/>
-        <Calendar HorizontalAlignment="Left" Margin="675,76,0,0" VerticalAlignment="Top" Grid.Row="1" SelectionMode="SingleRange" Width="180" Height="168"/>
-        <RichTextBox x:Name="list_events" HorizontalAlignment="Left" Height="172" Margin="24,406,0,0" VerticalAlignment="Top" Width="629" Grid.Row="1">
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text="14:16 Visual Studio c-sharp,"/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="14:16 Visual Studio c-sharp,"/>
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
+        <Rectangle x:Name="rect_lists" HorizontalAlignment="Left" Height="580" Margin="14,9,0,0" Grid.Row="1" Stroke="#FF656565" VerticalAlignment="Top" Width="651"/>
+        <TextBox x:Name="inp_searchActivity" HorizontalAlignment="Left" Margin="24,26,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Aktivitäten suchen..." VerticalAlignment="Top" Width="309" Height="20"/>
         <ListBox x:Name="list_activities" HorizontalAlignment="Left" Height="323" Margin="24,49,0,0" Grid.Row="1" VerticalAlignment="Top" Width="309" SelectionMode="Multiple">
             <ListBoxItem Content="ListBoxItem" ToolTip=""/>
             <ListBoxItem Content="ListBoxItem"/>
             <ListBoxItem Content="ListBoxItem"/>
         </ListBox>
-        <RichTextBox x:Name="list_nodes" Grid.Row="1" Margin="344,50,224,228" Width="309" Height="323" TextChanged="list_nodes_TextChanged" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text="RichTextBox"/>
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
-        <TextBox x:Name="inp_searchEvent" HorizontalAlignment="Left" Margin="24,383,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Events suchen..." VerticalAlignment="Top" Width="629" Height="20"/>
-        <TextBox x:Name="inp_searchActivity" HorizontalAlignment="Left" Margin="24,26,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Aktivitäten suchen..." VerticalAlignment="Top" Width="309" Height="20"/>
         <TextBox x:Name="inp_searchNode" HorizontalAlignment="Left" Margin="344,26,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Nodes suchen..." VerticalAlignment="Top" Width="309" Height="20" TextChanged="inp_searchNode_TextChanged"/>
-        <TextBox x:Name="btn_start" HorizontalAlignment="Left" Margin="675,26,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Start Anfangszeit" VerticalAlignment="Top" Width="180" TextAlignment="Center" Height="20"/>
-        <TextBox x:Name="btn_pause" HorizontalAlignment="Left" Margin="675,26,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Pause" VerticalAlignment="Top" Width="85" TextAlignment="Center" Height="20"/>
-        <TextBox x:Name="btn_addToNode" HorizontalAlignment="Left" Margin="676,272,0,0" TextWrapping="Wrap" Text="Zu Node hinzufügen" VerticalAlignment="Top" Width="180" Height="20" TextAlignment="Center" Grid.Row="1"/>
-        <TextBox x:Name="btn_createNewNode" HorizontalAlignment="Left" Margin="675,327,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="neues Node hinzufügen" VerticalAlignment="Top" Width="180" Height="20" TextAlignment="Center"/>
-        <TextBox x:Name="btn_renameNode" HorizontalAlignment="Left" Margin="675,352,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Node umbenennen" VerticalAlignment="Top" Width="180" Height="20" TextAlignment="Center"/>
-        <TextBox x:Name="btn_deleteNode" HorizontalAlignment="Left" Margin="675,377,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Node löschen" VerticalAlignment="Top" Width="180" Height="20" TextAlignment="Center"/>
-        <TextBox x:Name="btn_exportCSV" HorizontalAlignment="Left" Margin="676,434,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="CSV-Datei exportieren" VerticalAlignment="Top" Width="180" Height="20" TextAlignment="Center"/>
-        <TextBox x:Name="btn_options" HorizontalAlignment="Left" Margin="676,459,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Optionen" VerticalAlignment="Top" Width="180" Height="20" TextAlignment="Center"/>
-        <TextBox x:Name="btn_end_Copy" HorizontalAlignment="Left" Margin="770,26,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Feierabend" VerticalAlignment="Top" Width="85" TextAlignment="Center" Height="20"/>
+        <ListBox x:Name="list_nodes" Grid.RowSpan="2" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="344,49,0,0" Width="309" Height="323" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="inp_searchEvent" HorizontalAlignment="Left" Margin="24,383,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Events suchen..." VerticalAlignment="Top" Width="629" Height="20"/>
+        <ListBox x:Name="list_events" Grid.RowSpan="2" d:ItemsSource="{d:SampleData ItemCount=5}" Width="629" Height="172" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,406,0,0"/>
+        <Rectangle x:Name="rect_timetracking" HorizontalAlignment="Left" Height="55" Margin="664,9,0,0" Grid.Row="1" Stroke="#FF656565" VerticalAlignment="Top" Width="201"/>
         <TextBlock x:Name="txt_arbeitszeit" HorizontalAlignment="Left" Margin="673,2,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Arbeitszeit" VerticalAlignment="Top" Height="18" Width="62" Foreground="#FFE8E8E8" Background="#FF252525" TextAlignment="Center"/>
+        <Button x:Name="btn_start" Content="Button" HorizontalAlignment="Left" Margin="675,26,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="180" Height="20"/>
+        <Button x:Name="btn_pause" Content="Pause" HorizontalAlignment="Left" Margin="675,26,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.5,0.5" Height="20">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="btn_end" Content="Feierabend" HorizontalAlignment="Left" Margin="770,26,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.5,0.5" Height="20">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Rectangle x:Name="rect_calendar" HorizontalAlignment="Left" Height="195" Margin="664,63,0,0" Grid.Row="1" Stroke="#FF656565" VerticalAlignment="Top" Width="201"/>
         <TextBlock x:Name="txt_auswahlZeitspanne" HorizontalAlignment="Left" Margin="673,54,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Auswahl Zeitspanne" VerticalAlignment="Top" Height="18" Width="113" Foreground="#FFE8E8E8" Background="#FF252525" TextAlignment="Center"/>
+        <Calendar x:Name="cld_timespan" HorizontalAlignment="Left" Margin="675,76,0,0" VerticalAlignment="Top" Grid.Row="1" SelectionMode="SingleRange" Width="180" Height="168"/>
+        <Rectangle x:Name="rect_activities" HorizontalAlignment="Left" Height="53" Margin="664,257,0,0" Grid.Row="1" Stroke="#FF656565" VerticalAlignment="Top" Width="201"/>
         <TextBlock x:Name="txt_activities" HorizontalAlignment="Left" Margin="674,248,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Aktivitäten" VerticalAlignment="Top" Height="18" Width="62" Foreground="#FFE8E8E8" Background="#FF252525" TextAlignment="Center"/>
-        <Rectangle HorizontalAlignment="Left" Height="109" Margin="664,309,0,0" Grid.Row="1" Stroke="#FF656565" VerticalAlignment="Top" Width="201"/>
+        <Button x:Name="btn_addToNode" Content="zu Projekt hinzufügen" HorizontalAlignment="Left" Margin="676,272,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="180" Height="20" Click="btn_addToNode_Click"/>
+        <Rectangle x:Name="rect_nodes" HorizontalAlignment="Left" Height="109" Margin="664,309,0,0" Grid.Row="1" Stroke="#FF656565" VerticalAlignment="Top" Width="201"/>
         <TextBlock x:Name="txt_nodes" HorizontalAlignment="Left" Margin="672,301,0,0" TextWrapping="Wrap" Text="Nodes" VerticalAlignment="Top" Height="18" Width="40" Foreground="#FFE8E8E8" Background="#FF252525" TextAlignment="Center" Grid.Row="1"/>
+        <Button x:Name="btn_createNewNode" Content="neues Node hinzufügen" HorizontalAlignment="Left" Margin="675,327,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="180" Height="20"/>
+        <Button x:Name="btn_renameNode" Content="Node umbenennen" HorizontalAlignment="Left" Margin="675,352,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="180" Height="20"/>
+        <Button x:Name="btn_deleteNode" Content="Node löschen" HorizontalAlignment="Left" Margin="675,377,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="180" Height="20"/>
+        <Rectangle x:Name="rect_others" HorizontalAlignment="Left" Height="172" Margin="664,417,0,0" Grid.Row="1" Stroke="#FF656565" VerticalAlignment="Top" Width="201"/>
         <TextBlock x:Name="txt_other" HorizontalAlignment="Left" Margin="673,408,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Sonstiges" VerticalAlignment="Top" Height="18" Width="56" Foreground="#FFE8E8E8" Background="#FF252525" TextAlignment="Center"/>
+        <Button x:Name="btn_exportCSV" Content="CSV-Datei exportieren" HorizontalAlignment="Left" Margin="675,434,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="180" Height="20"/>
+        <Button x:Name="btn_options" Content="Optionen" HorizontalAlignment="Left" Margin="675,459,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="180" Height="20" IsCancel="True"/>
     </Grid>
 </Window>
