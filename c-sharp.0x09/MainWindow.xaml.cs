@@ -24,5 +24,20 @@ namespace c_sharp._0x09
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void inp_searchNode_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void list_nodes_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
