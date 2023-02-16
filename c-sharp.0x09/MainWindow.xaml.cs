@@ -13,6 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+// Requires Microsoft.Toolkit.Uwp.Notifications NuGet package version 7.0 or greater
+using Microsoft.Toolkit.Uwp.Notifications;
+
+
 namespace actra
 {
     /// <summary>
@@ -56,7 +60,7 @@ namespace actra
 
         private void btn_addToNode_Click(object sender, RoutedEventArgs e)
         {
-
+            Notification note = new Notification();
         }
 
         private void btn_pause_Click(object sender, RoutedEventArgs e)
