@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Reflection.Metadata;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace WindowsList;
@@ -8,13 +9,26 @@ static class Program
 {
     static void Main()
     {
-        foreach(KeyValuePair<IntPtr, string> window in OpenWindowGetter.GetOpenWindows())
+        IntPtr lastWindowHandle = 0;
+        while (true)
         {
-            IntPtr handle = window.Key;
-            string title = window.Value;
-
-            Console.WriteLine("{0}: {1}", handle, title);
+            IntPtr fgWindowHandle = OpenWindowGetter.GetForegroundWindow();
+            if (lastWindowHandle != fgWindowHandle)
+            {
+                var window = from n in OpenWindowGetter.GetOpenWindows() where n.Key == fgWindowHandle select n.Value;
+                if (window.Count() > 0)
+                {
+                    Console.WriteLine("{0}: {1}", DateTime.Now, window.SingleOrDefault());
+                    Thread.Sleep(500);
+                } 
+                else
+                {
+                    Thread.Sleep(100);
+                }
+                lastWindowHandle = fgWindowHandle;
+            }
         }
+        
     }
     
     /// <summary>Contains functionality to get all the open windows.</summary>
@@ -63,5 +77,12 @@ static class Program
 
         [DllImport("USER32.DLL")]
         private static extern IntPtr GetShellWindow();
+
+        [DllImport("user32.dll")]
+        public static extern int GetForegroundWindow();
+
+        [DllImport("user32.dll")]
+        static extern int GetClassName(int hWnd, StringBuilder lpClassName, int nMaxCount);
+
     }
 }
