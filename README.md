@@ -1,4 +1,6 @@
-# :timer: Actra: Zeiterfassungstool
+# Actra: Zeiterfassungstool
+
+![](imgs/qr-code.png)
 
 Studentisches Projekt von Isabelle Winkler <isabelle.winkler@rwth-aachen.de> und Christian Rene Thelen <christian.thelen@rwth-aachen.de>.
 
@@ -26,3 +28,6 @@ Mathematisch technische/-r Softwareentwickler/-in ([MaTSE](https://www.matse-aus
 Aachen, im [IT Center](https://www.itc.rwth-aachen.de/cms/IT-Center/Lehre-Ausbildung/~letj/MATSE-Ausbildung) der RWTH Aachen University.
 
 
+## Copyrights
+
+``Hourglass icon wbg.svg`` [Original](https://commons.wikimedia.org/wiki/File:Hourglass_icon_wbg.svg) by [Jmarchn](https://commons.wikimedia.org/wiki/user:Jmarchn), CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia CommonsLicense
