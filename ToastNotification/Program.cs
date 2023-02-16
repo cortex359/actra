@@ -16,10 +16,10 @@ namespace ToastNotification
         {
             var Notification1 = new ToastContentBuilder()
                 .SetToastScenario(ToastScenario.Reminder)
-                .AddArgument("action", "viewConversation")
-                .AddArgument("conversationId", 9813)
+//                .AddAppLogoOverride(new Uri("C:\\Users\\thelen\\GitLab\\matse-aachen.ws22-csharp\\c-sharp.0x09\\ToastNotification\\Resources\\logo.png"), ToastGenericAppLogoCrop.Circle)
                 .AddText("Inaktivität erkannt!")
                 .AddText("Wie haben Sie die letzten 37 Min. verbracht?")
+                .AddInlineImage(new Uri("https://picsum.photos/360/202?image=883"))
                 // Text box for replying
                 .AddInputTextBox("tbReply", placeHolderContent: "Aktivität angeben...")
 

@@ -1,4 +1,5 @@
-﻿using System.Reflection.Metadata;
+﻿using System.ComponentModel;
+using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -7,6 +8,47 @@ using HWND = IntPtr;
 
 static class Program
 {
+    class Event
+    {
+        private DateTime Timestamp;
+        public string Description;
+        public string Type;
+
+        public Event(string Description, string Type)
+        {
+            Timestamp = DateTime.Now;
+            this.Description = Description;
+        }
+    }
+
+    class EventList
+    {
+        private List<Event> List;
+        public EventList()
+        {
+            List = new List<Event>();
+        }
+
+        public void add(Event e)
+        {
+            List.Add(e);
+        }
+
+        delegate bool Filter (Event e);
+
+        private List<Event> filterEvents(Filter f)
+        {
+            var result = from n in this.List where f(n) select n;
+            return result.ToList();
+        }
+
+        public List<Event> showEvents(string searchStr)
+        {
+            Filter desc = e => e.Description.Contains(searchStr);
+            return filterEvents(desc);
+        }
+    }
+
     static void Main()
     {
         IntPtr lastWindowHandle = 0;
@@ -18,7 +60,7 @@ static class Program
                 var window = from n in OpenWindowGetter.GetOpenWindows() where n.Key == fgWindowHandle select n.Value;
                 if (window.Count() > 0)
                 {
-                    Console.WriteLine("{0}: {1}", DateTime.Now, window.SingleOrDefault());
+                    Event e = new Event(window.SingleOrDefault(), "FocusChangeEvent");
                     Thread.Sleep(500);
                 } 
                 else
@@ -63,19 +105,19 @@ static class Program
 
         private delegate bool EnumWindowsProc(HWND hWnd, int lParam);
 
-        [DllImport("USER32.DLL")]
+        [DllImport("user32.dll")]
         private static extern bool EnumWindows(EnumWindowsProc enumFunc, int lParam);
 
-        [DllImport("USER32.DLL")]
+        [DllImport("user32.dll")]
         private static extern int GetWindowText(HWND hWnd, StringBuilder lpString, int nMaxCount);
 
-        [DllImport("USER32.DLL")]
+        [DllImport("user32.dll")]
         private static extern int GetWindowTextLength(HWND hWnd);
 
-        [DllImport("USER32.DLL")]
+        [DllImport("user32.dll")]
         private static extern bool IsWindowVisible(HWND hWnd);
 
-        [DllImport("USER32.DLL")]
+        [DllImport("user32.dll")]
         private static extern IntPtr GetShellWindow();
 
         [DllImport("user32.dll")]
