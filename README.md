@@ -5,7 +5,11 @@
 Studentisches Projekt von Isabelle Winkler <isabelle.winkler@rwth-aachen.de> und Christian Rene Thelen <christian.thelen@rwth-aachen.de>.
 
 ## Beschreibung
-Windows Anwendung zur quasi automatischen Zeiterfassung.
+Windows Anwendung zur semi automatischen Zeiterfassung.
+
+## ToDos
+- [] Export als CSV
+- [] Statistiken
 
 ## Projektinfos
 
