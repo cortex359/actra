@@ -30,4 +30,6 @@ Aachen, im [IT Center](https://www.itc.rwth-aachen.de/cms/IT-Center/Lehre-Ausbil
 
 ## Copyrights
 
-``Hourglass icon wbg.svg`` [Original](https://commons.wikimedia.org/wiki/File:Hourglass_icon_wbg.svg) by [Jmarchn](https://commons.wikimedia.org/wiki/user:Jmarchn), CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia CommonsLicense
+``Hourglass icon wbg.svg`` [Original](https://commons.wikimedia.org/wiki/File:Hourglass_icon_wbg.svg) by [Jmarchn](https://commons.wikimedia.org/wiki/user:Jmarchn), CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons License.
+
+Using Microsoft.Toolkit.Uwp.Notifications from [Windows Community Toolkit](https://github.com/CommunityToolkit/WindowsCommunityToolkit), MIT License. 
