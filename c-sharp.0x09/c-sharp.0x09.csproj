@@ -107,5 +107,8 @@
   <ItemGroup>
     <Resource Include="hourglass.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="hourglass.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

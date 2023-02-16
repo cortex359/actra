@@ -44,7 +44,14 @@ static class Program
 
         public List<Event> showEvents(string searchStr)
         {
-            Filter desc = e => e.Description.Contains(searchStr);
+            if (searchStr != "")
+            {
+                Filter desc = e => e.Description.Contains(searchStr);
+            }
+            else
+            {
+                Filter none = e => e;
+            }
             return filterEvents(desc);
         }
     }

@@ -44,5 +44,15 @@ namespace c_sharp._0x09
         {
 
         }
+
+        private void btn_pause_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_end_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
