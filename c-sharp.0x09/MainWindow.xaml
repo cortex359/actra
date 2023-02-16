@@ -1,11 +1,11 @@
-﻿<Window x:Name="Actra" x:Class="c_sharp._0x09.MainWindow"
+﻿<Window x:Name="Actra" x:Class="actra.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:c_sharp._0x09"
+        xmlns:local="clr-namespace:actra"
         mc:Ignorable="d"
-        Title="Zeiterfassung" Height="638" Width="890" HorizontalAlignment="Left" VerticalAlignment="Top">
+        Title="Actra: Zeiterfassung" Height="638" Width="890" HorizontalAlignment="Left" VerticalAlignment="Top" ResizeMode="NoResize" Topmost="True" Icon="/hourglass.ico" Loaded="Window_Loaded">
     <Grid Background="#FF252525">
         <Grid.RowDefinitions>
             <RowDefinition Height="0*"/>
@@ -13,19 +13,19 @@
         </Grid.RowDefinitions>
         <Rectangle x:Name="rect_lists" HorizontalAlignment="Left" Height="580" Margin="14,9,0,0" Grid.Row="1" Stroke="#FF656565" VerticalAlignment="Top" Width="651"/>
         <TextBox x:Name="inp_searchActivity" HorizontalAlignment="Left" Margin="24,26,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Aktivitäten suchen..." VerticalAlignment="Top" Width="309" Height="20"/>
-        <ListBox x:Name="list_activities" HorizontalAlignment="Left" Height="323" Margin="24,49,0,0" Grid.Row="1" VerticalAlignment="Top" Width="309" SelectionMode="Multiple">
+        <ListBox x:Name="list_activities" HorizontalAlignment="Left" Height="323" Margin="24,49,0,0" Grid.Row="1" VerticalAlignment="Top" Width="309" SelectionMode="Multiple" SelectionChanged="list_activities_SelectionChanged">
             <ListBoxItem Content="ListBoxItem" ToolTip=""/>
             <ListBoxItem Content="ListBoxItem"/>
             <ListBoxItem Content="ListBoxItem"/>
         </ListBox>
         <TextBox x:Name="inp_searchNode" HorizontalAlignment="Left" Margin="344,26,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Nodes suchen..." VerticalAlignment="Top" Width="309" Height="20" TextChanged="inp_searchNode_TextChanged"/>
-        <ListBox x:Name="list_nodes" Grid.RowSpan="2" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="344,49,0,0" Width="309" Height="323" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <ListBox x:Name="list_nodes" Grid.RowSpan="2" d:ItemsSource="{d:SampleData ItemCount=8}" Margin="344,49,0,0" Width="309" Height="323" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBox x:Name="inp_searchEvent" HorizontalAlignment="Left" Margin="24,383,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Events suchen..." VerticalAlignment="Top" Width="629" Height="20"/>
-        <ListBox x:Name="list_events" Grid.RowSpan="2" d:ItemsSource="{d:SampleData ItemCount=5}" Width="629" Height="172" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,406,0,0"/>
-        <Rectangle x:Name="rect_timetracking" HorizontalAlignment="Left" Height="55" Margin="664,9,0,0" Grid.Row="1" Stroke="#FF656565" VerticalAlignment="Top" Width="201"/>
+            <ListBox x:Name="list_events" Grid.RowSpan="2" Width="629" Height="172" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,406,0,0"/>
+            <Rectangle x:Name="rect_timetracking" HorizontalAlignment="Left" Height="55" Margin="664,9,0,0" Grid.Row="1" Stroke="#FF656565" VerticalAlignment="Top" Width="201"/>
         <TextBlock x:Name="txt_arbeitszeit" HorizontalAlignment="Left" Margin="673,2,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Arbeitszeit" VerticalAlignment="Top" Height="18" Width="62" Foreground="#FFE8E8E8" Background="#FF252525" TextAlignment="Center"/>
-        <Button x:Name="btn_start" Content="Button" HorizontalAlignment="Left" Margin="675,26,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="180" Height="20"/>
-        <Button x:Name="btn_pause" Content="Pause" HorizontalAlignment="Left" Margin="675,26,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.5,0.5" Height="20" Click="btn_pause_Click">
+        <Button x:Name="btn_start" Content="Starte Arbeitstag" HorizontalAlignment="Left" Margin="675,26,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="180" Height="20" Click="btn_start_Click"/>
+        <Button x:Name="btn_pause" Content="Pause" HorizontalAlignment="Left" Margin="675,26,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.5,0.5" Height="20" Click="btn_pause_Click" d:IsHidden="True">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1"/>
@@ -35,7 +35,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn_end" Content="Feierabend" HorizontalAlignment="Left" Margin="770,26,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.5,0.5" Height="20" Click="btn_end_Click">
+        <Button x:Name="btn_end" Content="Feierabend" HorizontalAlignment="Left" Margin="770,26,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.5,0.5" Height="20" Click="btn_end_Click" d:IsHidden="True">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1"/>

@@ -50,7 +50,7 @@ static class Program
             }
             else
             {
-                Filter none = e => e;
+                Filter none = e => false;
             }
             return filterEvents(desc);
         }
