@@ -32,15 +32,24 @@ namespace actra
             this.data = new Data();
             EventSource focusChanges = new EventSource(this.data);
             Task eventWatcher = Task.Run(
-                () => focusChanges.Run(this)
+                () => focusChanges.Run()
             );
+        }
 
-            Console.WriteLine("Okay");
+        public async void UpdateSales()
+        {
+            var collection = await Task.Run(() =>
+            {
+                return this.data.eventList.showEvents("");
+            });
+            list_events.ItemsSource = collection;
+            list_events.Items.Refresh();
         }
 
         public void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            list_events.ItemsSource = this.data.eventList.showEvents("");
+            UpdateSales();
+            // list_events.ItemsSource = this.data.eventList.showEvents("");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -60,22 +69,36 @@ namespace actra
 
         private void btn_addToNode_Click(object sender, RoutedEventArgs e)
         {
-            Notification note = new Notification();
         }
 
         private void btn_pause_Click(object sender, RoutedEventArgs e)
         {
-            this.data.SaveEvents();
+            if (btn_pause.Content.ToString().Equals("Pause"))
+            {
+                btn_end.Visibility = Visibility.Hidden;
+                btn_pause.Content = "Pause beenden";
+
+            } else
+            {
+                btn_end.Visibility = Visibility.Visible;
+                btn_pause.Content = "Pause";
+                Notification note = new Notification();
+                note.Notification1.Show();
+            }
         }
 
         private void btn_end_Click(object sender, RoutedEventArgs e)
         {
-
+            btn_start.Visibility = Visibility.Visible;
+            btn_end.Visibility = Visibility.Hidden;
+            btn_pause.Visibility = Visibility.Hidden;
         }
 
         private void btn_start_Click(object sender, RoutedEventArgs e)
         {
-
+            btn_start.Visibility = Visibility.Hidden;
+            btn_end.Visibility = Visibility.Visible;
+            btn_pause.Visibility = Visibility.Visible;
         }
 
         private void list_activities_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -86,6 +109,11 @@ namespace actra
         private void list_events_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void btn_exportCSV_Click(object sender, RoutedEventArgs e)
+        {
+            this.data.SaveEvents();
         }
     }
 }

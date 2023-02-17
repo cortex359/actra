@@ -9,6 +9,7 @@ using System.ComponentModel;
 
 using HWND = System.IntPtr;
 using System.Windows.Markup;
+using System.Windows.Controls;
 
 namespace actra
 {
@@ -16,7 +17,7 @@ namespace actra
     {
         private Data Data;
 
-        public void Run(MainWindow mainWindow)
+        public void Run()
         {
             IntPtr lastWindowHandle = (HWND)0;
             while (true)
@@ -54,8 +55,6 @@ namespace actra
     /// @NOTE: See Reference https://www.tcx.be/blog/2006/list-open-windows/
     public static class Windows
     {
-        /// <summary>Returns a dictionary that contains the handle and title of all the open windows.</summary>
-        /// <returns>A dictionary that contains the handle and title of all the open windows.</returns>
         public static IDictionary<HWND, string> GetOpenWindows()
         {
             HWND shellWindow = GetShellWindow();

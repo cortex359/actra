@@ -10,9 +10,12 @@ namespace actra
     internal class Notification
     {
 
+        public ToastContentBuilder Notification1;
+
+
         public Notification()
         {
-            var Notification1 = new ToastContentBuilder()
+            Notification1 = new ToastContentBuilder()
                 .SetToastScenario(ToastScenario.Reminder)
                 .AddText("Inaktivität erkannt!")
                 .AddText("Wie haben Sie die letzten 37 Min. verbracht?")
@@ -31,7 +34,6 @@ namespace actra
                     .SetBackgroundActivation());
 
             Console.WriteLine("Notification build.");
-            Notification1.Show();
             Console.WriteLine("Notification triggerd.");
         }
 

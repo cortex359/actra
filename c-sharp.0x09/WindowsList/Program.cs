@@ -10,7 +10,7 @@ static class Program
 {
     class Event
     {
-        private DateTime Timestamp;
+        public DateTime Timestamp;
         public string Description;
         public string Type;
 
@@ -44,15 +44,16 @@ static class Program
 
         public List<Event> showEvents(string searchStr)
         {
+            Filter f;
             if (searchStr != "")
             {
-                Filter desc = e => e.Description.Contains(searchStr);
+                f = e => e.Description.Contains(searchStr);
             }
             else
             {
-                Filter none = e => false;
+                f = e => false;
             }
-            return filterEvents(desc);
+            return filterEvents(f);
         }
     }
 
@@ -68,6 +69,7 @@ static class Program
                 if (window.Count() > 0)
                 {
                     Event e = new Event(window.SingleOrDefault(), "FocusChangeEvent");
+                    Console.WriteLine($"[{e.Timestamp}] {e.Description}");
                     Thread.Sleep(500);
                 } 
                 else

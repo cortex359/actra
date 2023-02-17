@@ -42,7 +42,10 @@ namespace actra
 
         private List<Event> filterEvents(Filter f)
         {
-            var result = from n in this.List where f(n) select n;
+            var result = 
+                from n in this.List 
+                where f(n) 
+                select n;
             return result.ToList();
         }
 
@@ -53,8 +56,10 @@ namespace actra
             {
                 filter = e => e.Description.Contains(searchStr);
             }
-            var list = from l in filterEvents(filter)
-                       select l.Timestamp + l.Description;
+            var list = 
+                from l in filterEvents(filter)
+                select $"[{l.Timestamp}] {l.Description}";
+
             return list.ToList();
         }
     }
