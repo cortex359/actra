@@ -1,6 +1,9 @@
 # Actra: Zeiterfassungstool
 
-![](imgs/qr-code.png)
+![](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
+![](https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white)
+
+![](imgs/qr-code_256px.png)
 
 Studentisches Projekt von Isabelle Winkler <isabelle.winkler@rwth-aachen.de> und Christian Rene Thelen <christian.thelen@rwth-aachen.de>.
 
@@ -32,8 +35,9 @@ Mathematisch technische/-r Softwareentwickler/-in ([MaTSE](https://www.matse-aus
 Aachen, im [IT Center](https://www.itc.rwth-aachen.de/cms/IT-Center/Lehre-Ausbildung/~letj/MATSE-Ausbildung) der RWTH Aachen University.
 
 
+
 ## Copyrights
 
-`Hourglass icon wbg.svg`, [Original](https://commons.wikimedia.org/wiki/File:Hourglass_icon_wbg.svg) by [Jmarchn](https://commons.wikimedia.org/wiki/user:Jmarchn), CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons License.
+- `Hourglass icon wbg.svg`, [Original](https://commons.wikimedia.org/wiki/File:Hourglass_icon_wbg.svg) by [Jmarchn](https://commons.wikimedia.org/wiki/user:Jmarchn), CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons License.
 
-Using `Microsoft.Toolkit.Uwp.Notifications` from [Windows Community Toolkit](https://github.com/CommunityToolkit/WindowsCommunityToolkit), MIT License. 
+- Using `Microsoft.Toolkit.Uwp.Notifications` from [Windows Community Toolkit](https://github.com/CommunityToolkit/WindowsCommunityToolkit), MIT License. 
